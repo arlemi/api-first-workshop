@@ -38,8 +38,10 @@ You don't need to worry too much about the detail in the spec, but note the foll
 
 Take a quick look at the overview page in the **API** builder–we'll get to it them better as we work through the session. We'll generate collections for a few different purposes including documentation and testing, all based on the spec, and link elements such as mock servers and monitors to it so that it becomes our single source of truth for the API. Notice that you can comment and share the API to collaborate with teammates–Postman can also generate reports on your API to give stakeholders an overview of how it's performing.
 
-## 3\. Copy the documentation collection
+## 3\. Check the documentation collection
 
 A `Customers` collection was automatically generated when creating the API. _If you click_ _**View complete collection documentation**_ _you can see the docs straight away, or open the collection from the left and open the docs using the button to the right–_**you can keep the complete docs view open in a tab to help you work through the steps**.
+
+> If it's easier, you can also [open the instructions on GitHub](https://github.com/arlemi/api-first-workshop/blob/main/collection-instructions.md)
 
 Open the new collection and take a look at how the requests have been generated.
