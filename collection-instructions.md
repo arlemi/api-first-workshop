@@ -113,11 +113,28 @@
   and <strong>Send</strong> the request. The test should pass.</p>
 <p>Add the same snippet to the other two requests, but in the <code>POST</code> request change the code to
   <code>201</code> as follows:</p>
-<pre><code>pm.test(\"Status code is 201\", function () {\n  pm.response.to.have.status(201);\n});</code></pre>
+<pre><code>pm.test("Status code is 201", function () {
+  pm.response.to.have.status(201);
+});</code></pre>
 <p>All of your requests should now have a test of some kind in them–to add one that looks a little more like a real
   contract test let&#39;s define a schema and validate against it in the <code>GET</code> request that retrieves a
   particular customer.</p>
-<pre><code>const schema = {\n \"properties\": {\n  \"id\": {\n    \"type\": \"integer\"\n  },\n  \"company\": {\n    \"type\": \"string\"\n  },\n  \"name\": {\n    \"type\": \"string\"\n  }\n  }\n};\npm.test(\"Schema is valid\", function() {\n pm.response.to.have.jsonSchema(schema);\n});</code></pre>
+<pre><code>const schema = {
+ "properties": {
+  "id": {
+    "type": "integer"
+  },
+  "company": {
+    "type": "string"
+  },
+  "name": {
+    "type": "string"
+  }
+  }
+};
+pm.test("Schema is valid", function() {
+ pm.response.to.have.jsonSchema(schema);
+});</code></pre>
 <p><strong>Save</strong> and <strong>Send</strong> the request–it should pass. Try making it fail by changing the
   <code>type</code> for <code>id</code> to <code>boolean</code>.</p>
 <blockquote>
