@@ -45,11 +45,36 @@
 <p>In <strong>APIs</strong> &gt; <strong>Customers</strong> &gt; <strong>Definition</strong>. Add a new endpoint inside
   <code>paths</code>, after the <code>customer</code> path (adding a comma before the previous element–you can hit the
   <strong>Beautify</strong> button at the top right to clean up your indentation).</p>
-<pre><code>\"/customers\": {\n  \"get\": {\n    \"summary\": \"Retrieve details for all customers\",\n    \"operationId\": \"listCustomers\",\n    \"tags\": [\n      \"customer\"\n    ],\n    \"responses\": {\n      \"200\": {\n        \"description\": \"Details of all customers\",\n        \"content\":{\n          \"application/json\": {\n            \"schema\": {\n              \"$ref\": \"#/components/schemas/CustomerList\"\n            }\n          }\n        }\n      }\n    }\n  }\n}</code></pre>
+<pre><code>"/customers": {
+  "get": {
+    "summary": "Retrieve details for all customers",
+    "operationId": "listCustomers",
+    "tags": [
+      "customer"
+    ],
+    "responses": {
+      "200": {
+        "description": "Details of all customers",
+        "content":{
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/CustomerList"
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre>
 <p>The endpoint is going to be at the path <code>/customers</code> and will return a list of customer objects
   (referencing the existing <code>Customer</code> schema). Add the <code>CustomerList</code> schema in
   <code>components</code> &gt; <code>schemas</code> after the existing schema elements.</p>
-<pre><code>\"CustomerList\": {\n  \"type\": \"array\",\n  \"items\": {\n    \"$ref\": \"#/components/schemas/Customer\"\n  }\n}</code></pre>
+<pre><code>"CustomerList": {
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Customer"
+  }
+}</code></pre>
 <p><strong>Save</strong> the spec.</p>
 <h2 id='4-create-a-mock-collection'>4. Create a mock collection</h2>
 <p>Next we&#39;re going to create a collection we can use with a mock server we&#39;re also going to create.
