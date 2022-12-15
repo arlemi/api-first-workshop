@@ -142,7 +142,9 @@ pm.test("Schema is valid", function() {
 </blockquote>
 <p>Add a final test to the <strong>customer</strong> folder–this will run for every request inside the folder. In the
   <strong>Tests</strong> for the folder, add the following to test the response time:</p>
-<pre><code>pm.test(\"Response time is less than 200ms\", function () {\n  pm.expect(pm.response.responseTime).to.be.below(200);\n});</code></pre>
+<pre><code>pm.test("Response time is less than 200ms", function () {
+  pm.expect(pm.response.responseTime).to.be.below(200);
+});</code></pre>
 <p>Try running your collection in the collection runner–go back to <strong>Test and Automation</strong> and hit <strong>Run</strong>, running with
   the default options. Check out the output, selecting requests to drill down into the detail (which you can also do in
   the <strong>Console</strong>).</p>
